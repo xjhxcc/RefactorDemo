@@ -1,6 +1,6 @@
 package gildedRose;
 
-public class Item {
+public abstract class Item {
 
     public String name;
 
@@ -10,11 +10,9 @@ public class Item {
     private final int maxQuality = 50;
     private final int minQuality = 0;
 
-    public Item(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
-    }
+    public abstract void updateQualityByType();
+    public abstract void updateSellIn ();
+    public abstract void updateQualityWithSellInLessThan0();
     boolean isaSulfuras() {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }

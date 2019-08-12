@@ -22,13 +22,12 @@ public class GildedRose {
             }
 
             if (items[i].sellIn < 0) {
-                if (!items[i].isAged_brie()) {
-                    if (!items[i].isBackstage()) {
-                        items[i].isQualityOver0();
-                    } else {
-                        items[i].quality = items[i].quality - items[i].quality;
-                    }
-                } else {
+                if (!items[i].isAged_brie()&& !items[i].isBackstage()) {
+                    items[i].isQualityOver0();
+                } else if(items[i].isBackstage()){
+                    items[i].quality = items[i].quality - items[i].quality;
+                }
+                else {
                     items[i].isQualityUnder50();
                 }
             }

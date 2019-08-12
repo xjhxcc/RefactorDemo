@@ -82,4 +82,15 @@ public class GildedRoseTest {
         assertEquals(31, items[0].quality);
         assertEquals(5, items[0].sellIn);
     }
+    @Test
+    public void should_return_correct_value_when_sallin_under_0_and_name_is_Aged_and_quality_bigger_50(){
+        //given
+        Item[] items = {new Item("Aged Brie",6,51)};
+        GildedRose gildedRose = new GildedRose(items);
+        //when
+        gildedRose.updateQuality();
+        //then
+        assertEquals(51, items[0].quality);
+        assertEquals(5, items[0].sellIn);
+    }
 }

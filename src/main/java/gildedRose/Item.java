@@ -13,8 +13,20 @@ public class Item {
         this.sellIn = sellIn;
         this.quality = quality;
     }
+    boolean isaSulfuras() {
+        return name.equals("Sulfuras, Hand of Ragnaros");
+    }
 
-   @Override
+    boolean isBackstage() {
+        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    boolean isAged_brie() {
+        return name.equals("Aged Brie");
+    }
+
+
+    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }

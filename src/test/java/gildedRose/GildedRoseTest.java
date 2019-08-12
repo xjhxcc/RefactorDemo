@@ -14,6 +14,7 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
         //then
         assertEquals(29, items[0].quality);
+        assertEquals(4,items[0].sellIn);
     }
     @Test
     public void should_return_quality_when_update_quality_given_item_name_equal_Aged_Brie_and_quality_smaller_than_50(){
@@ -24,5 +25,7 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
         //then
         assertEquals(31, items[0].quality);
+        assertEquals(4,items[0].sellIn);
     }
+
 }

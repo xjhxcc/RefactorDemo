@@ -126,4 +126,5 @@ public class GildedRoseTest {
         assertEquals(30, items[0].quality);
         assertEquals(-1, items[0].sellIn);
     }
+
 }

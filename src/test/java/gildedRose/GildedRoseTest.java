@@ -104,4 +104,15 @@ public class GildedRoseTest {
         assertEquals(0, items[0].quality);
         assertEquals(-2, items[0].sellIn);
     }
+    @Test
+    public void should_return_correct_value_when_sallin_under_0_and_name_is_not_Backstage_and_quality_under_or_equal_0(){
+        //given
+        Item[] items = {new Item("item",-1,0)};
+        GildedRose gildedRose = new GildedRose(items);
+        //when
+        gildedRose.updateQuality();
+        //then
+        assertEquals(0, items[0].quality);
+        assertEquals(-2, items[0].sellIn);
+    }
 }

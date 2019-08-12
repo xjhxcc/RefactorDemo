@@ -34,10 +34,8 @@ public class Item {
     }
 
     void isQualityOver0() {
-        if (quality > minQuality) {
-            if (!isaSulfuras()) {
-                quality = quality - 1;
-            }
+        if (quality > minQuality && !isaSulfuras()) {
+            quality = quality - 1;
         }
     }
 

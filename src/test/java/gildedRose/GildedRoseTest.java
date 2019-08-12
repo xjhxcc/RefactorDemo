@@ -115,4 +115,15 @@ public class GildedRoseTest {
         assertEquals(0, items[0].quality);
         assertEquals(-2, items[0].sellIn);
     }
+    @Test
+    public void should_return_correct_value_when_name_is_Sulfuras_and__sellIn_under_0(){
+        //given
+        Item[] items = {new Item("Sulfuras, Hand of Ragnaros",-1,30)};
+        GildedRose gildedRose = new GildedRose(items);
+        //when
+        gildedRose.updateQuality();
+        //then
+        assertEquals(30, items[0].quality);
+        assertEquals(-1, items[0].sellIn);
+    }
 }

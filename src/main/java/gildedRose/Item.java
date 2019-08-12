@@ -7,6 +7,8 @@ public class Item {
     public int sellIn;
 
     public int quality;
+    private final int maxQuality = 50;
+    private final int minQuality = 0;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
@@ -26,13 +28,13 @@ public class Item {
     }
 
     void isQualityUnder50() {
-        if (quality < 50) {
+        if (quality < maxQuality) {
             quality = quality + 1;
         }
     }
 
     void isQualityOver0() {
-        if (quality > 0) {
+        if (quality > minQuality) {
             if (!isaSulfuras()) {
                 quality = quality - 1;
             }

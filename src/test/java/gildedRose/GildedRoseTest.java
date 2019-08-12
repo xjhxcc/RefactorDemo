@@ -28,7 +28,7 @@ public class GildedRoseTest {
         assertEquals(4,items[0].sellIn);
     }
     @Test
-    public void should_return_correct_when_update_quality_given_name_is_Backstage_and_quality_under_50_and_sellIn_between_6_and_11(){
+    public void should_return_correct_value_when_update_quality_given_quality_under_50_and_name_is_Backstage_and_sellIn_between_6_and_11(){
         //given
         Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert",7,30)};
         GildedRose gildedRose = new GildedRose(items);
@@ -37,6 +37,17 @@ public class GildedRoseTest {
         //then
         assertEquals(32, items[0].quality);
         assertEquals(6, items[0].sellIn);
+    }
+    @Test
+    public void should_return_correct_value_when_update_quality_given_quality_under_50_and_name_is_Backstage_and_sellIn_under_6(){
+        //given
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert",5,30)};
+        GildedRose gildedRose = new GildedRose(items);
+        //when
+        gildedRose.updateQuality();
+        //then
+        assertEquals(33, items[0].quality);
+        assertEquals(4, items[0].sellIn);
     }
 
 }

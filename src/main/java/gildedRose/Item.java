@@ -25,6 +25,20 @@ public class Item {
         return name.equals("Aged Brie");
     }
 
+    void isQualityUnder50() {
+        if (quality < 50) {
+            quality = quality + 1;
+        }
+    }
+
+    void isQualityOver0() {
+        if (quality > 0) {
+            if (!isaSulfuras()) {
+                quality = quality - 1;
+            }
+        }
+    }
+
 
     @Override
    public String toString() {

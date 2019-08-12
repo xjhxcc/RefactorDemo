@@ -15,4 +15,14 @@ public class GildedRoseTest {
         //then
         assertEquals(29, items[0].quality);
     }
+    @Test
+    public void should_return_quality_when_update_quality_given_item_name_equal_Aged_Brie_and_quality_smaller_than_50(){
+        //given
+        Item[] items = {new Item("Aged Brie",5,30)};
+        GildedRose gildedRose = new GildedRose(items);
+        //when
+        gildedRose.updateQuality();
+        //then
+        assertEquals(31, items[0].quality);
+    }
 }

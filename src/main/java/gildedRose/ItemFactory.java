@@ -10,6 +10,8 @@ public class ItemFactory {
                 return new BackstageItem();
             case "Sulfuras, Hand of Ragnaros":
                 return new SulfurasItem();
+            case "Conjured":
+                return new ConjuredItem();
             default:
                 return new NormalItem();
         }

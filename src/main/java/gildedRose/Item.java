@@ -13,6 +13,7 @@ public class Item {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
+        this.superItem=ItemFactory.createItem(name);
     }
 
     public String getName() {
@@ -43,24 +44,15 @@ public class Item {
         }
     }
     public void updateQuality() {
-        switch (this.getName()) {
-            case "Aged Brie":
-                new AgedItem();
-            case "Backstage passes to a TAFKAL80ETC concert":
-                new BackstageItem();
-            case "Sulfuras, Hand of Ragnaros":
-                new SulfurasItem();
-            default:
-                new NormalItem();
-        }
+        superItem.updateQualityItem(this);
     }
     void decreaseSellIn() {
-        this.sellIn--;
+        this.sellIn=this.sellIn-1;
     }
 
     void whenQualityUnder50(Item item) {
         if (item.quality < 50) {
-            item.quality++;
+            item.quality=item.quality+1;
             backstageJudgeSellIn6and11(item);
         }
     }
